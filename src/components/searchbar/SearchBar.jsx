@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ onFormReceived }) => {
+  const [text, setText] = useState("");
+
+  const onFormSubmitted = (e) => {
+    e.preventDefault();
+    onFormReceived(text);
+  };
+
   return (
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">
-          @
-        </span>
+    <form onSubmit={(e) => onFormSubmitted(e)}>
+      <div className="form-group">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Find a git user"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
       </div>
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Username"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-      />
-    </div>
+    </form>
   );
 };
 

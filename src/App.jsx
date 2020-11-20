@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/layout/Navbar";
 import SearchBar from "./components/searchbar/SearchBar";
 
 const App = () => {
+  const [text, setText] = useState("");
+
   const navbarOptions = {
     title: "GitFinder",
-    theme: "danger", // theme options -> [dark, light, primary, danager, warning success]
+    theme: "danger", // theme options -> [dark, light, primary, danager, success]
     icon: "fa fa-github",
   };
+
+  console.log(text);
 
   return (
     <div>
@@ -17,7 +21,7 @@ const App = () => {
         icon={navbarOptions.icon}
       />
       <div className="container" style={{ padding: "10px 0" }}>
-        <SearchBar />
+        <SearchBar onFormReceived={setText} />
       </div>
     </div>
   );

@@ -7,9 +7,9 @@ const Navbar = ({ title, theme, icon }) => {
 
   return (
     <div>
-      <nav class={`navbar navbar-${textColor} bg-${theme}`}>
-        <span class="navbar-brand mb-0 h1">
-          <i class={icon}></i> {title}
+      <nav className={`navbar navbar-${textColor} bg-${theme}`}>
+        <span className="navbar-brand mb-0 h1">
+          <i className={icon}></i> {title}
         </span>
       </nav>
     </div>
