@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/layout/Navbar";
+import SearchBar from "./components/searchbar/SearchBar";
 
 const App = () => {
   const navbarOptions = {
@@ -15,7 +16,9 @@ const App = () => {
         theme={navbarOptions.theme}
         icon={navbarOptions.icon}
       />
-      <div className="container"></div>
+      <div className="container" style={{ padding: "10px 0" }}>
+        <SearchBar />
+      </div>
     </div>
   );
 };
