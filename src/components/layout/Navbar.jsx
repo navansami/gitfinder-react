@@ -1,7 +1,7 @@
 import React from "react";
 
 const Navbar = ({ title, theme, icon }) => {
-  //determins color of text color against background color in navbar
+  //determines color of text color against background color in navbar
   const themeColorOptions = ["dark", "primary", "danger", "success"];
   const textColor = themeColorOptions.includes(theme) ? "dark" : "light";
 
