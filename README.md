@@ -1,5 +1,6 @@
-#GitFinder - React
+# GitFinder - React
 
-##install a local version
+## Install a Local Version
+
 run 'npm install' after cloning this project\
 run 'npm start' for dev server
