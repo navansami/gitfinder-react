@@ -1,25 +1,13 @@
 import React from "react";
+import "./User.css";
 
 const User = ({ user }) => {
   return (
-    <div
-      className="card"
-      style={{
-        width: "20rem",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <img
-        src={user.avatar_url}
-        className="card-img-top"
-        alt=""
-        style={{ borderRadius: "50%", width: "50%", display: "block" }}
-      />
+    <div className="card">
+      <img src={user.avatar_url} className="card-img-top" alt="" />
       <div className="card-body">
         <h5> {user.login} </h5>
-        <a href="#" className="btn btn-dark">
+        <a href="#" className="btn btn-dark btn-block">
           See more
         </a>
       </div>
