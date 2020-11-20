@@ -6,6 +6,7 @@ const SearchBar = ({ onFormReceived }) => {
   const onFormSubmitted = (e) => {
     e.preventDefault();
     onFormReceived(text);
+    setText("");
   };
 
   return (

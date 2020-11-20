@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/layout/Navbar";
 import SearchBar from "./components/searchbar/SearchBar";
+import UserList from "./components/users/UserList";
+import gitusers from "./apis/gitusers";
 
 const App = () => {
-  const [text, setText] = useState("");
+  const [user, setUser] = useState("");
+  const [usersList, setUsersList] = useState([]);
+
+  useEffect(() => {
+    const findUsers = async () => {
+      const data = await gitusers.get("/search/users", {
+        params: {
+          q: user,
+        },
+      });
+      console.log(data.data.items);
+      setUsersList(data.data.items);
+    };
+
+    if (user) findUsers();
+  }, [user]);
 
   const navbarOptions = {
     title: "GitFinder",
     theme: "danger", // theme options -> [dark, light, primary, danager, success]
     icon: "fa fa-github",
   };
-
-  console.log(text);
 
   return (
     <div>
@@ -21,7 +36,8 @@ const App = () => {
         icon={navbarOptions.icon}
       />
       <div className="container" style={{ padding: "10px 0" }}>
-        <SearchBar onFormReceived={setText} />
+        <SearchBar onFormReceived={setUser} />
+        <UserList usersList={usersList} />
       </div>
     </div>
   );
