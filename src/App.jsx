@@ -2,20 +2,19 @@ import React from "react";
 import Navbar from "./components/layout/Navbar";
 
 const App = () => {
-  /*
-    Themes colors can include:
-      - primary
-      - dark
-      - light
-  */
   const navbarOptions = {
     title: "GitFinder",
-    theme: "light",
+    theme: "danger", // theme options -> [dark, light, primary, danager, warning success]
+    icon: "fa fa-github",
   };
 
   return (
     <div>
-      <Navbar title={navbarOptions.title} theme={navbarOptions.theme} />
+      <Navbar
+        title={navbarOptions.title}
+        theme={navbarOptions.theme}
+        icon={navbarOptions.icon}
+      />
       <div className="container"></div>
     </div>
   );
