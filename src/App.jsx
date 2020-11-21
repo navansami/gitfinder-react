@@ -15,7 +15,6 @@ const App = () => {
           q: user,
         },
       });
-      console.log(data.data.items);
       setUsersList(data.data.items);
     };
 
