@@ -14,7 +14,9 @@ const useGitUsers = (user) => {
         q: user,
       },
     });
-    setUsersList(data.data.items);
+    if (data) {
+      setUsersList(data.data.items);
+    }
   };
 
   return [users, findUsers];

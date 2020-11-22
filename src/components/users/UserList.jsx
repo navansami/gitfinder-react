@@ -13,7 +13,8 @@ const UserList = ({ usersList }) => {
         justifyContent: "space-around",
       }}
     >
-      {renderedUser}
+      {" "}
+      {renderedUser}{" "}
     </div>
   );
 };
