@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DisplayUser from "./DisplayUser";
 import "./User.css";
 
 const User = ({ user }) => {
@@ -10,7 +9,10 @@ const User = ({ user }) => {
       <div className="card-body">
         <h5> {user.login} </h5>
         <Link
-          to={`/user?user=${user.login}`}
+          to={{
+            pathname: `/user/${user.login}`,
+            login: `?${user.login}`,
+          }}
           className="btn btn-dark btn-block"
         >
           See more

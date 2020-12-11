@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ title, theme, icon }) => {
   //determines color of text color against background color in navbar
@@ -8,9 +9,9 @@ const Navbar = ({ title, theme, icon }) => {
   return (
     <div>
       <nav className={`navbar navbar-${textColor} bg-${theme}`}>
-        <span className="navbar-brand mb-0 h1">
+        <Link to="/" className="navbar-brand mb-0 h1">
           <i className={icon}></i> {title}
-        </span>
+        </Link>
       </nav>
     </div>
   );
