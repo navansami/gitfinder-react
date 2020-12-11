@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import gitusers from "../../apis/gitusers";
+import UserRepos from "./UserRepos";
 import "./User.css";
 
 const DisplayUser = () => {
@@ -27,6 +28,9 @@ const DisplayUser = () => {
   }, [username]);
 
   const { avatar_url, login, location, name, bio, html_url } = user;
+  const renderedRepos = repos.map((repo) => {
+    return <UserRepos key={repo.id} repo={repo} />;
+  });
 
   return (
     <div className="container">
@@ -49,6 +53,7 @@ const DisplayUser = () => {
           </a>
         </div>
       </div>
+      <div>{renderedRepos}</div>
     </div>
   );
 };
