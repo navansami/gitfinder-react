@@ -6,7 +6,7 @@ import "./User.css";
 const DisplayUser = () => {
   let { username } = useParams();
   const [user, setUser] = useState("");
-  // setUser(username);
+  const [repos, setRepos] = useState([]);
 
   useEffect(() => {
     const getUser = async () => {
@@ -15,6 +15,15 @@ const DisplayUser = () => {
     };
 
     if (username) getUser();
+  }, [username]);
+
+  useEffect(() => {
+    const getRepos = async () => {
+      const data = await gitusers.get(`/users/${username}/repos`);
+      return setRepos(data.data);
+    };
+
+    if (username) getRepos();
   }, [username]);
 
   const { avatar_url, login, location, name, bio, html_url } = user;
@@ -30,7 +39,12 @@ const DisplayUser = () => {
         <div className="profile_card__bio">
           <h4>Bio of {name ? name : login}</h4>
           {bio}
-          <a href={html_url} target="_blank" className="btn btn-dark">
+          <a
+            href={html_url}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-dark"
+          >
             Visit Github Profile
           </a>
         </div>
