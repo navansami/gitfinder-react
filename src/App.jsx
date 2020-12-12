@@ -7,7 +7,7 @@ import DisplayUser from "./components/users/DisplayUser";
 const App = () => {
   const navbarOptions = {
     title: "GitFinder",
-    theme: "danger", // theme options -> [dark, light, primary, danager, success]
+    theme: "dark", // theme options -> [dark, light, primary, danager, success]
     icon: "fa fa-github",
   };
 

@@ -8,7 +8,7 @@ const Home = ({ userSelected }) => {
 
   return (
     <div className="container" style={{ padding: "10px 0" }}>
-      <SearchBar onFormReceived={search} clearButton={usersList.length} />
+      <SearchBar onFormReceived={search} />
       <UserList usersList={usersList} userSelected={userSelected} />
     </div>
   );

@@ -53,7 +53,7 @@ const DisplayUser = () => {
           </a>
         </div>
       </div>
-      <div>{renderedRepos}</div>
+      <div className="repos_sect">{renderedRepos}</div>
     </div>
   );
 };
